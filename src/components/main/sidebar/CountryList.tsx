@@ -42,7 +42,7 @@ const CountryListItem = ({
   };
 
   // 엔터 함수
-  const onItemKeyDown = (e: any) => {
+  const onItemKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
       onSelectCountry(country);

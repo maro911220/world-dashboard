@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/command";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { CountrySearchProps } from "@/lib/types";
+import { CountrySearchProps, Country } from "@/lib/types";
 import { Check, ChevronsUpDown } from "lucide-react";
 import { useCountrySearch } from "@/lib/hooks/useCountrySearch";
 
@@ -41,7 +41,7 @@ export default function CountrySearch({
 
   // 국가 선택 핸들러
   const handleCountrySelect = useCallback(
-    (country: any) => {
+    (country: Country) => {
       onSelectCountry(country);
       setOpen(false);
       setSearchTerm("");
