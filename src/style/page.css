@@ -1,0 +1,259 @@
+@import "./util/tailwind.config.css";
+
+/* main */
+.content-wrapper {
+  @apply space-y-6;
+  @apply max-w-7xl mx-auto p-4;
+}
+
+.main-layout {
+  @apply gap-6;
+  @apply flex flex-col md:flex-row;
+}
+
+.content-pane {
+  @apply flex-1;
+}
+
+.content-card {
+  @apply border-border shadow-lg;
+  @apply bg-card/50 backdrop-blur-sm;
+}
+
+/* initial-loading */
+.initial-loading-overlay {
+  @apply fixed inset-0 z-50;
+  @apply bg-black/70 backdrop-blur-sm;
+  @apply flex items-center justify-center;
+}
+
+.initial-loading-box {
+  @apply p-6 rounded-lg;
+  @apply flex items-center gap-4;
+  @apply bg-card border border-border shadow-2xl;
+}
+
+.initial-loading-spinner {
+  @apply h-8 w-8;
+  @apply border-b-2 border-primary;
+  @apply animate-spin rounded-full;
+}
+
+.initial-loading-text {
+  @apply text-muted-foreground;
+}
+
+/* placeholder */
+.placeholder-card {
+  @apply h-60;
+  @apply flex items-center justify-center;
+  @apply bg-card/50 border-border backdrop-blur-sm;
+}
+
+.placeholder-content {
+  @apply py-20;
+  @apply text-center text-muted-foreground;
+}
+
+.loading-spinner {
+  @apply h-12 w-12 mx-auto mb-6;
+  @apply border-b-2 border-primary;
+  @apply animate-spin rounded-full;
+}
+
+.placeholder-title {
+  @apply text-xl font-medium mb-2;
+}
+
+.placeholder-globe-icon {
+  @apply w-20 h-20 mx-auto mb-6;
+  @apply opacity-30 text-primary;
+}
+
+.placeholder-description {
+  @apply text-muted-foreground;
+}
+
+/* CountriesSidebar */
+.sidebar-container {
+  @apply md:sticky top-4;
+  @apply h-auto md:max-h-[calc(100dvh-32px)];
+  @apply w-full md:w-80 md:flex-shrink-0;
+}
+
+.sidebar-title {
+  @apply flex items-center gap-2;
+  @apply text-lg text-sidebar-foreground;
+}
+
+.sidebar-title-icon {
+  @apply w-5 h-5 mb-1 text-sidebar-primary;
+}
+
+.sidebar-description {
+  @apply -mt-1 ml-1 mb-2;
+}
+
+/* search popover */
+.popover-container {
+  @apply border-b-0 md:border-b;
+  @apply px-6 pb-4  border-sidebar-border relative;
+}
+
+.popover-trigger-button {
+  @apply w-full justify-between cursor-pointer;
+  @apply bg-sidebar-accent/20 border-sidebar-border;
+  @apply text-sidebar-foreground  hover:text-sidebar-accent-foreground;
+}
+
+.popover-content {
+  @apply p-0 bg-popover border-border;
+}
+
+.popover-content *::-webkit-scrollbar {
+  @apply w-2 h-2;
+}
+
+.popover-content *::-webkit-scrollbar-track {
+  @apply bg-foreground/10;
+}
+
+.popover-content *::-webkit-scrollbar-thumb {
+  @apply bg-foreground/10 rounded-sm;
+}
+
+.command-input {
+  @apply text-popover-foreground placeholder:text-muted-foreground;
+}
+
+.command-empty {
+  @apply pt-2 text-center text-sm text-muted-foreground;
+}
+
+.command-item {
+  @apply items-start gap-1;
+  @apply text-popover-foreground hover:bg-accent hover:text-accent-foreground;
+}
+
+.command-item-check-icon {
+  @apply mr-2 h-4 w-4;
+}
+
+/* CountryList */
+.country-list-container {
+  @apply overflow-y-auto;
+  @apply h-full hidden md:flex;
+}
+
+.country-list-item {
+  @apply border-b border-border last:border-b-0;
+  @apply p-4 hover:bg-sidebar-accent/50 transition-all cursor-pointer;
+}
+
+.country-list-item.selected {
+  @apply bg-primary/20 border-l-4 border-l-primary shadow-sm;
+}
+
+.country-item-content {
+  @apply flex items-start gap-3;
+}
+
+.country-item-flag {
+  @apply leading-5.5;
+  @apply text-2xl text-primary flex-shrink-0;
+}
+
+.country-item-info {
+  @apply flex-1;
+}
+
+.country-item-name {
+  @apply text-foreground font-medium truncate;
+}
+
+.country-item-capital {
+  @apply flex items-center gap-1;
+  @apply text-xs text-muted-foreground truncate;
+}
+
+.country-item-icon {
+  @apply -mt-0.5 w-3 h-3;
+}
+
+.country-item-details {
+  @apply -mb-0.5 mt-1;
+  @apply flex items-center gap-1;
+  @apply text-xs text-muted-foreground/80;
+}
+
+/* WeatherDetails */
+.weather-details-container {
+  @apply space-y-8;
+  @apply animate-in fade-in duration-500;
+}
+
+.country-card-header {
+  @apply gap-2;
+  @apply flex flex-wrap items-center justify-between;
+}
+
+.country-card-header-info {
+  @apply flex items-center gap-4;
+}
+
+.country-flag {
+  @apply text-4xl md:text-5xl font-bold;
+}
+
+.country-name {
+  @apply mt-1;
+  @apply text-xl md:text-2xl text-foreground;
+}
+
+.country-details {
+  @apply flex items-center gap-1 md:gap-2 mt-1;
+  @apply text-sm md:text-base text-muted-foreground;
+}
+
+.country-details-icon {
+  @apply w-3 h-3 md:w-4 md:h-4 text-primary;
+}
+
+.country-stats {
+  @apply ml-auto;
+  @apply text-right text-sm text-muted-foreground;
+}
+
+.country-population {
+  @apply font-medium;
+}
+
+.weather-cards-container {
+  @apply gap-6;
+  @apply grid grid-cols-2 lg:grid-cols-4;
+}
+
+.weather-icon {
+  @apply text-4xl;
+}
+
+.weather-card-text {
+  @apply text-lg lg:text-xl font-bold;
+}
+
+.card-title {
+  @apply text-sm text-muted-foreground font-medium;
+}
+
+.chart-container {
+  @apply grid grid-cols-1 gap-8;
+}
+
+.chart-card {
+  @apply p-6;
+}
+
+.chart-title {
+  @apply mb-4;
+  @apply text-lg font-semibold text-foreground;
+}
