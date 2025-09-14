@@ -24,7 +24,7 @@
 ### 1. 프로젝트 복제
 
 ```bash
-git clone https://github.com/your-username/world-dashboard.git
+git clone https://github.com/maro911220/world-dashboard.git
 cd world-dashboard
 ```
 
